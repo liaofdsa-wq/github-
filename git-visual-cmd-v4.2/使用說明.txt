@@ -1,0 +1,37 @@
+﻿Git 視覺操作室 v4.2 - Windows
+
+1. 請先安裝 Git for Windows，並確定在 CMD 輸入 git --version 有結果。
+2. 解壓縮整個資料夾，不要只開啟 index.html。
+3. 雙擊 start-git-helper.cmd。它會啟動只允許本機使用的服務並自動開啟瀏覽器。
+4. 到檔案總管複製 Git 專案所在資料夾的完整路徑，貼到頁面上。
+5. 按「刷新 Git 圖」，看本機綠色標籤與 origin/* 紫色標籤。
+6. 選操作、看虛線預覽、確認後才按「確認並執行」。
+7. 若要顯示 GitHub 最新狀態，請按「Fetch」（需要網路），執行完會刷新。
+
+注意：
+- GitHub 遠端欄代表本機上次 Fetch/Push 後儲存的遠端追蹤資料，不保證即時。
+- 圖上的虛線是預測，不是已經發生的 Commit 或分支。
+- Pull 使用 --ff-only；非 Fast-forward 不會自動合併。
+- Commit 使用 git add -A，會包括新增、修改、刪除，執行前要先確認。
+- 若操作失敗（認證/衝突），請在 Git 或 VS Code 處理，再刷新。
+- 關閉 CMD 視窗可停止伺服器。
+- 頁面中的「複製指令」請貼到 PowerShell 執行；工具本身仍由 CMD 啟動。
+- main／master 的 Commit 和 Push 預設禁止，請先建立個人分支。
+
+
+[v4.1 修正] Windows PowerShell 5.1 讀取無 BOM 的 UTF-8 .ps1 時，中文錯誤訊息會被解碼錯誤，甚至讓引號失效。server.ps1 已改用 UTF-8 with BOM。
+若之前已解壓 v4，請使用這個新版資料夾，關閉舊的啟動視窗再開。
+
+[v4.2 修正] PowerShell 5.1 不接受 .Split(@('='),2) 作為最多切兩段的用法，會把 2 誤解為無效的 StringSplitOptions。已改成 IndexOf 與 Substring 解析表單，不需修改 Git 設定。
+
+[2026-10-14 實測修正]
+- Git 改用直接啟動程序與 UTF-8 輸出，保留中文、引號及特殊符號，也保留 Git 狀態的開頭空白。
+- 改路徑或刷新失敗會清除舊專案；執行期間鎖住控制項，避免操作錯專案或重複送出。
+- Git 操作最長等待 75 秒；認證問題會回報，請在 VS Code／PowerShell 完成認證後重試。
+- 修正 HTTP 拒絕請求時可能斷線而遺失錯誤訊息的問題，並縮短瀏覽器空閒連線造成的等待。
+- Windows PowerShell 5.1：19 項回歸／HTTP 整合測試全數通過。Push、Fetch、Pull 使用本機測試遠端，不涉及真實 GitHub 帳號。
+- Chrome 實測：CMD 啟動、刷新、建立分支、中文引號 Commit、重複送出防護、路徑變更、失敗後清除資料、示範模式與 PR 網址產生通過。
+
+重新測試（先啟動 start-git-helper.cmd，再在此資料夾開 PowerShell）：
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File .\test-helper.ps1 -BaseUri http://127.0.0.1:8765
+測試只修改自動建立的臨時儲存庫，結束後會清除。
