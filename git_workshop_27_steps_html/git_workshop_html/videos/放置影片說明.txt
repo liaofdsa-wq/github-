@@ -1,0 +1,3 @@
+把 MP4 依 HTML 各步驟顯示的 videos/檔名 放進此資料夾。
+例如 01_install-git.mp4、11_create-branch.mp4。
+重新打開 HTML 即會在對應步驟顯示播放器。

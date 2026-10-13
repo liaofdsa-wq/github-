@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Git × 小烏龜 × GitHub｜27 步視覺實作教學</title>
+<style>
+:root{color-scheme:dark;--bg:#0a1020;--panel:#111b2c;--panel2:#152239;--line:#2a3d57;--white:#f0f5ff;--muted:#a7b6cd;--green:#5ee2ad;--purple:#b8a0ff;--blue:#75bcff;--amber:#ffd08c;--shadow:0 18px 60px #0004}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 60% -12%,#142948 0%,var(--bg) 47%);color:var(--white);font-family:Inter,"Noto Sans TC","Microsoft JhengHei",system-ui,sans-serif;line-height:1.65}button,input{font:inherit}button{cursor:pointer}a{color:#a8d3ff}a:hover{text-decoration:underline}
+.layout{display:grid;grid-template-columns:298px minmax(0,1fr);min-height:100vh}.sidebar{position:sticky;top:0;height:100vh;overflow:auto;border-right:1px solid var(--line);background:#0d1626ee;padding:24px 17px}.brand{display:flex;gap:11px;align-items:center;margin-bottom:12px}.mark{width:39px;height:39px;border:1px solid #4e7994;background:linear-gradient(135deg,#20476b,#15334c);border-radius:12px;display:grid;place-items:center;color:#fff;font-weight:800}.brand strong{font-size:17px;line-height:1.1}.brand small{display:block;color:var(--muted);font-size:11px;font-weight:500;margin-top:3px}.side-sub{font-size:12px;color:var(--muted);margin:18px 9px 10px}.side-bar{height:7px;border-radius:15px;background:#26354a;overflow:hidden;margin:10px 8px 8px}.side-bar span{display:block;height:100%;background:linear-gradient(90deg,var(--green),var(--blue));width:0;transition:width .2s}.stat{color:var(--muted);font-size:12px;margin:0 8px 20px}.group-name{color:#b8c9e6;letter-spacing:.08em;text-transform:uppercase;font-size:10px;font-weight:800;margin:19px 8px 8px}.nav{display:flex;align-items:center;width:100%;text-align:left;border:1px solid transparent;border-radius:10px;padding:8px 9px;gap:9px;background:transparent;color:#b9c8dc;font-size:12.5px;line-height:1.35;margin:2px 0}.nav:hover{background:#18263b;color:#fff}.nav.active{background:#1c304a;color:#fff;border-color:#38567a}.nav .num{font-variant-numeric:tabular-nums;color:#879bb6;font-size:11px;width:23px;flex-shrink:0}.nav.active .num{color:#a6e3ff}.nav .tick{margin-left:auto;color:var(--green);font-size:13px}
+main{max-width:1320px;width:100%;margin:0 auto;padding:32px clamp(18px,4vw,62px) 80px}.topline{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}.eyebrow{color:#8bcbf9;font-size:11px;letter-spacing:.19em;font-weight:800;text-transform:uppercase}.meta{font-size:12px;color:var(--muted)}h1{font-size:clamp(30px,4vw,46px);line-height:1.18;letter-spacing:-.035em;margin:10px 0 12px}h2{font-size:22px;line-height:1.25;margin:0}h3{font-size:14px;margin:0 0 8px}.lead{max-width:780px;color:#b6c5db;font-size:15px;margin:0 0 24px}.hero{padding:28px 30px;background:linear-gradient(120deg,#122640 0%,#142039 70%);border:1px solid #2d4968;border-radius:20px;box-shadow:var(--shadow);margin:22px 0 25px}.pills{display:flex;gap:8px;flex-wrap:wrap;margin:13px 0}.pill{border:1px solid #3d5370;border-radius:999px;padding:4px 11px;color:#bed4ee;font-size:12px}.callout{background:#193147;border-left:3px solid var(--blue);padding:10px 14px;border-radius:8px;color:#d9e9fc;font-size:13px}.warning{border-left-color:var(--amber);background:#352c24}.lesson-head{display:flex;align-items:flex-start;justify-content:space-between;gap:15px}.phase{color:#9fc8f8;font-size:11px;letter-spacing:.09em;font-weight:800}.lesson-title{font-size:clamp(25px,3vw,34px);margin:6px 0}.lesson-goal{color:var(--muted);margin:0 0 16px;font-size:14px;max-width:830px}.counter{border:1px solid #334967;border-radius:13px;padding:9px 12px;white-space:nowrap;font-size:12px;color:#cbd7e8}.counter b{font-size:18px;color:#fff}.two{display:grid;grid-template-columns:1fr 1fr;gap:13px}.panel{border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:18px;min-width:0}.panel.padded{padding:22px}.overline{font-size:10px;letter-spacing:.13em;color:#9db4d1;font-weight:800;margin-bottom:8px}.graph-panel{position:relative;background:linear-gradient(180deg,#142238,#101b2c);overflow:hidden;min-height:245px}.graph-panel.after{border-color:#3d7b75}.graph-label{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700}.swatch{width:9px;height:9px;border-radius:4px;background:#718096}.after .swatch{background:var(--green)}.graph-art{margin-top:11px;width:100%;height:166px;display:grid;place-items:center}.graph-art svg{width:100%;height:100%;max-width:510px}.graph-caption{font-size:12px;color:#a6b8ce;margin-top:5px;min-height:40px}.lesson-main{margin-top:18px;display:grid;grid-template-columns:minmax(0,1.14fr) minmax(280px,.86fr);gap:16px}.steps{counter-reset:action;list-style:none;margin:4px 0 0;padding:0}.steps li{position:relative;padding:8px 0 8px 40px;color:#e2eaf6;font-size:14px;border-bottom:1px solid #24354a}.steps li:last-child{border:0}.steps li:before{counter-increment:action;content:counter(action);position:absolute;left:0;top:10px;display:grid;place-items:center;border:1px solid #456078;color:#addefb;width:25px;height:25px;font-size:12px;border-radius:50%}.video-placeholder{aspect-ratio:16 / 9;border:1px dashed #55708b;background:repeating-linear-gradient(135deg,#17283b,#17283b 13px,#162436 13px,#162436 26px);border-radius:12px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:7px;color:#d1e4f3}.play{font-size:30px;line-height:1}.videoname{font-family:Consolas,monospace;color:#9db2c9;font-size:11px;word-break:break-all}.video-hint{font-size:11px;color:#9aadc4;text-align:center}.video-player{width:100%;border-radius:12px;aspect-ratio:16/9;background:#080c15;display:none}.video-section{display:flex;flex-direction:column;gap:11px}.label-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.chip{font-size:11px;border-radius:6px;background:#20384d;border:1px solid #365472;padding:2px 7px;color:#c1dbf3}.outcome{display:flex;gap:10px;align-items:flex-start;padding:13px 15px;background:#142b2c;border:1px solid #28524b;border-radius:12px;margin-top:13px;font-size:13px;color:#d3f6e7}.outcome strong{color:#7ee7bd}.foot{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:19px 0}.complete{display:flex;align-items:center;gap:9px;font-size:13px;color:#cfe0ed;cursor:pointer}.complete input{width:17px;height:17px;accent-color:#4bcc9c}.actions{display:flex;gap:8px}.btn{border:1px solid #405979;background:#1b3048;color:#e4efff;padding:10px 15px;border-radius:10px;font-size:13px;font-weight:700}.btn:hover{background:#27425f}.btn.primary{background:#267da3;color:#fff;border-color:#3da5c8}.btn.primary:hover{background:#3390b5}.btn:disabled{opacity:.38;cursor:not-allowed}.tip{border-radius:12px;background:#2b271f;border:1px solid #51402e;color:#e6d5bd;padding:12px 15px;font-size:12px;margin-top:14px}.overview{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}.overview .panel{padding:14px 16px}.overview strong{font-size:19px}.overview p{margin:2px 0;color:var(--muted);font-size:12px}.overview .mini{color:var(--green)}.endcard{margin-top:18px;border:1px solid #2b5265;background:linear-gradient(90deg,#132c36,#142036);padding:16px 19px;border-radius:13px}.endcard p{margin:4px 0;font-size:13px;color:#bcd0df}.hidden{display:none!important}.nav-mobile{display:none}body.hide-intro .hero,body.hide-intro .overview{display:none}.tiny{font-size:11px;color:var(--muted)}
+@media(max-width:1050px){.layout{grid-template-columns:240px 1fr}.lesson-main{grid-template-columns:1fr}.graph-panel{min-height:228px}.graph-art{height:150px}}
+@media(max-width:760px){.layout{display:block}.sidebar{display:none}.nav-mobile{display:flex;width:100%;gap:9px;padding:10px 0}.nav-mobile select{flex:1;min-width:0;background:#142438;color:#fff;border:1px solid #35506d;border-radius:9px;padding:8px;font-size:12px}main{padding:18px 15px 65px}.hero{padding:20px}.two{grid-template-columns:1fr}.overview{grid-template-columns:1fr 1fr}.lesson-head{flex-direction:column}.graph-panel{min-height:216px}.graph-art{height:140px}.graph-caption{min-height:0}.actions{width:100%}.actions .btn{flex:1}}
+@media print{body{background:white;color:#182537}.sidebar,.actions,.nav-mobile,.foot{display:none}.layout{display:block}main{max-width:none}.panel,.hero{background:white;box-shadow:none;color:#182537}.lesson-goal,.graph-caption{color:#475569}}
+</style>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+ <div class="brand"><div class="mark">Git</div><div><strong>版本控制實作室</strong><small>TortoiseGit × GitHub</small></div></div>
+ <div class="side-sub">27 支微影片位置 · 逐步圖解 · 自主進度</div><div class="side-bar"><span id="sideProgress"></span></div><p class="stat" id="sideStat">已完成 0 / 27 步</p>
+ <div id="sidebarNav"></div>
+</aside>
+<main>
+ <div class="nav-mobile"><select id="mobileSelect" aria-label="選擇教學步驟"></select></div>
+ <div class="topline"><div class="eyebrow">SELF-PACED WORKSHOP · VISUAL EDITION</div><div class="meta">純 HTML · 離線可開啟 · 不執行 Git 指令</div></div>
+ <section class="hero" id="intro"><h1>讓 Git 變成看得見的操作。</h1><p class="lead" style="margin:0">不背指令。跟著小烏龜做一次、觀察版本圖，再用 GitHub 把自己的成果合併回團隊的 <code>main</code>。</p><div class="pills"><span class="pill">① 本機 Git</span><span class="pill">② 版本時光機</span><span class="pill">③ 分支與合併</span><span class="pill">④ GitHub 同步</span><span class="pill">⑤ 六人 PR 挑戰</span></div><div class="callout">設計原則：一支影片只對應一組短操作。原理、操作前後差異與驗收條件由 HTML 解釋；影片目前預留空位，之後把 MP4 放到 <code>videos/</code> 即可。</div></section>
+ <section class="overview"><div class="panel"><strong>27</strong><p>個獨立微操作</p></div><div class="panel"><strong>5</strong><p>個學習章節</p></div><div class="panel"><strong class="mini">main ← PR × 6</strong><p>最終六人協作驗收</p></div></section>
+ <section id="lesson" aria-live="polite"></section>
+ <div class="endcard"><strong>最後的驗收，不是看完影片。</strong><p>每位組員：Clone 團隊 Repo → 建立個人分支 → 只改自己的資料夾 → Commit → Push → 建立 PR。由帶領者審核後合併；大家再 Pull 最新 <code>main</code>，確認六份文件都在。</p><p class="tiny">提示：資料夾不是分支；每一條 Git 分支仍含整個專案。實際分支圖會依操作與 Merge 策略而不同，此處為教學示意。</p></div>
+</main>
+</div>
+<script>
+'use strict';
+const chapterTitles=['環境與本機版本庫','版本時光機','分支與合併','GitHub 雲端同步','六人團隊協作'];
+const lessons=[
+// chapter, title, goal, before, after, beforeNote, afterNote, steps, expected, tip
+[0,'安裝 Git','讓 Windows 具備 Git 版本控制能力。','install0','install1','電腦還沒有 Git。','Git 已就緒，小烏龜才能使用底層 Git。',['前往 Git for Windows 官方網站下載安裝檔。','完成安裝；一般教學可先使用預設設定。','在開始功能表確認 Git 已安裝。'],'已安裝 Git for Windows。','Git 與 GitHub 是不同的東西：Git 可完全離線使用。'],
+[0,'安裝 TortoiseGit','讓 Git 操作出現在檔案總管右鍵選單。','install1','install2','有 Git，但操作介面還沒準備好。','檔案總管右鍵即可看到小烏龜的選單。',['安裝 TortoiseGit（與系統相符的版本）。','選擇性安裝繁體中文語言包並在設定中切換。','在資料夾空白處按右鍵，確認 TortoiseGit 選單出現。'],'右鍵選單能找到 TortoiseGit。','Windows 11 常需先按「顯示其他選項」才看得到完整右鍵選單。'],
+[0,'建立本機版本庫','讓一個普通資料夾開始記錄版本。','folder','repo','只是一個普通資料夾。','資料夾內建立 .git 管理資料（尚無 Commit）。',['在檔案總管建立 Git 練習資料夾。','在資料夾空白處按右鍵，選「Git 在此建立版本庫／Git Create repository here」。','確認建立成功；不要勾選建立純版本庫（Bare）。'],'練習資料夾已成為本機 Git Repository。','不要直接在已經包含其他 Git 專案的上層資料夾初始化。'],
+[0,'第一次 Commit','把 222.txt 第一版正式存進歷史。','repo','one','版本庫建立了，但還沒有歷史節點。','main 有第一個 Commit，記錄 222.txt 第一版。',['建立 222.txt，輸入「第一版：我的名字」。','右鍵 → Git 提交（Commit）→ main。','勾選 222.txt、填寫提交訊息「新增 222 第一版」、按提交。'],'顯示日誌裡出現第一個 Commit。','Git 不追蹤完全空的資料夾；請至少放一個檔案。'],
+[1,'修改 222.txt','先改變工作資料夾，觀察尚未提交的狀態。','one','draft','上一版已經 Commit。','檔案有變更，但尚未新增 Commit。',['打開 222.txt，將內容改成「第二版：我的名字」。','儲存檔案。','先不要 Commit，觀察檔案圖示或檢查修改清單。'],'能分辨「修改檔案」與「建立 Commit」是兩件事。','只儲存檔案，不會自動產生 Git 歷史版本。'],
+[1,'第二次 Commit','把第二版寫成新的歷史節點。','draft','two','工作區有未提交修改。','main 向前增加一個 Commit。',['右鍵 → Git 提交（Commit）→ main。','檢查修改清單，輸入訊息「更新 222 第二版」。','按提交完成。'],'main 現在至少有兩筆 Commit。','Commit 在本機完成，不代表已經上傳 GitHub。'],
+[1,'開啟提交歷史','用小烏龜看懂一條版本時間線。','two','two','已經有兩次提交。','顯示日誌列出兩筆 Commit 與檔案修改紀錄。',['右鍵 → TortoiseGit → 顯示日誌（Show log）。','找到第一次與第二次 Commit。','確認每筆紀錄有提交訊息、日期、作者。'],'能指出「第一版」和「第二版」各是哪一個 Commit。','「顯示日誌」和「版本分支圖」都是視覺化歷史工具，呈現方式不同。'],
+[1,'比較兩個版本','知道 Git 保存的不是只有最新版。','two','diff','同一檔案已存在兩個版本。','差異視窗標示新增、移除或修改的文字。',['開啟「顯示日誌」。','選取兩個 Commit 並使用「比較版本」（Compare revisions）。','查看 222.txt 第一版與第二版的文字差異。'],'能說出第二版相較第一版改動了什麼。','顏色通常代表新增與刪除，不是檔案本身的格式。'],
+[1,'開啟舊版檔案','不更動現在的檔案，直接觀看第一版。','two','old','工作資料夾仍是第二版。','開啟歷史第一版的快照；現有第二版不變。',['在「顯示日誌」選擇第一版 Commit。','在下方檔案清單找到 222.txt。','右鍵開啟該版內容，或另存該版本。'],'能看到第一版，而目前資料夾的第二版仍在。','若想保留原檔，優先用「開啟／另存歷史版本」，不要用 Reset。'],
+[1,'恢復歷史檔案','了解把舊內容帶回工作區，和刪除歷史不同。','two','restore','目前檔案內容是第二版。','工作區內容可恢復第一版；舊 Commit 仍存在。',['在「顯示日誌」找到第一版及 222.txt。','使用適用於單一檔案的「還原到此版本」操作，先確認目標檔案。','示範完可將恢復結果 Commit，或取消此次練習變更，確保下一關工作區乾淨。'],'理解「恢復檔案」不等於刪除第二版的歷史。','避免使用「重置（Reset）→ Hard」還原單一檔案；那可能影響整個專案。'],
+[2,'建立 feature 分支','從 main 的現有提交位置開出新分支。','two','branch','目前只有 main 的歷史指標。','多一個 feature 標籤，兩分支暫時指向同個 Commit。',['確定目前工作區沒有待處理的修改。','右鍵 → TortoiseGit → 建立分支（Create Branch）。','名稱輸入 feature，起點使用目前 main 的 Commit，確認建立。'],'本機出現 feature 分支。','建立分支不代表版本圖會立即分叉：一開始兩個標籤在同一節點。'],
+[2,'切換到 feature','讓目前工作資料夾進入新分支。','branch','checkout','feature 已建立，但可能尚未切過去。','HEAD 現在位於 feature（檔案未必立刻改變）。',['右鍵 → TortoiseGit → 切換／檢出（Switch/Checkout）。','在分支清單選 feature。','確認切換完成。'],'目前分支顯示 feature。','工作區有未提交修改時，切換可能會被阻擋；先確認狀態。'],
+[2,'在 feature Commit','只讓個人分支向前發展。','checkout','feature','main 與 feature 尚在同個 Commit。','feature 多出一個 Commit，main 仍指向舊節點。',['在 feature 分支修改 222.txt，加入一行「feature 修改」。','右鍵 → Git 提交（Commit）→ feature。','填寫訊息並完成提交。'],'feature 具有 main 尚未擁有的修改。','feature 比 main 多 Commit，不代表圖上一定畫成兩條線。'],
+[2,'切回 main','觀察不同分支對應不同的工作區檔案。','feature','mainreturn','目前所在分支為 feature。','HEAD 回到 main，feature 的專屬修改不再顯示於此工作區。',['右鍵 → TortoiseGit → 切換／檢出。','選 main 並確認。','開啟 222.txt，觀察剛才 feature 專屬內容已不在此版本。'],'能說出現在是哪個分支，並理解檔案為何改變。','切換只是改變工作區對應哪段歷史，不會刪除另一條分支。'],
+[2,'在 main 也 Commit','讓 main 和 feature 真正形成兩條不同歷史。','mainreturn','diverged','feature 已向前，main 停在共同祖先。','main 也新增自己的 Commit，因此兩分支真正分叉。',['保持在 main 分支。','新增另一個檔案 main-note.txt，避免和 feature 修改相同位置。','使用 Git 提交建立「main 的獨立修改」。'],'版本圖出現兩條不同的 Commit 歷史。','兩條分支各有不同 Commit，才有歷史上的真正分叉。'],
+[2,'合併 feature 到 main','把 feature 的成果整合進目前 main。','diverged','merged','main 和 feature 各自有新的 Commit。','在 main 合併 feature，形成一個合併節點（示意為 Merge Commit）。',['確認目前所在分支是 main，且工作區乾淨。','右鍵 → TortoiseGit → 合併（Merge），來源分支選 feature。','選擇建立合併提交（若選項提供且適用），完成後確認檔案內容。'],'main 現在包含 feature 的修改。','這是本機 Git Merge，不是 GitHub 上的 Pull Request。若出現衝突，須先處理。'],
+[2,'查看合併版本圖','用完成的歷史驗證分支與合併。','merged','merged','兩條線已經在 merge commit 匯合。','版本分支圖清楚呈現共同祖先、分叉與合併。',['右鍵 → TortoiseGit → 版本分支圖（Revision Graph）。','找出 main、feature、共同祖先與 Merge 節點。','再開「顯示日誌」比對提交紀錄。'],'能指出哪裡分叉、哪裡重新合併。','若採 Fast-forward、Squash 或 Rebase，圖形不一定會長成此處的合併形狀。'],
+[3,'建立 GitHub Repository','準備遠端儲存空間，讓 Git 歷史能共享。','merged','cloud','本機已有完整 Git 歷史。','GitHub 多了一個空的遠端 Repository。',['登入 GitHub → New repository。','輸入例如 git-workshop-demo，選擇可見性。','因為本機已有歷史，先不要新增 README／.gitignore／License，建立空 Repo。'],'取得新 Repository 的 HTTPS URL。','GitHub Repository 是雲端專案；本機 Git Repository 不會因為建立網頁專案而自動連上。'],
+[3,'設定遠端 origin','讓本機知道應該推送到哪個 GitHub 專案。','cloud','origin','GitHub 有空的 Repo，但本機尚無遠端設定。','本機記住遠端網址 origin，尚未上傳 Commit。',['在本機專案右鍵 → TortoiseGit → 設定（Settings）。','Git → 遠端（Remote），新增名稱 origin。','貼上 GitHub 的 HTTPS URL，儲存後檢查無誤。'],'本機 origin 指向正確的 GitHub Repository。','若已存在 origin，先檢查 URL，不要盲目建立第二個。'],
+[3,'Push main 到 GitHub','第一次把本機主分支上傳雲端。','origin','pushed','GitHub Repo 仍沒有本機的提交歷史。','Push 後遠端 main 對應到本機 main 的最新 Commit。',['右鍵 → TortoiseGit → 推送（Push）。','本機分支 main、遠端 origin、遠端分支 main。','確認 Push 成功；如需要，依指示完成 GitHub 登入。'],'GitHub Code 頁面能看到本機檔案和 main 分支。','Push 不等於 Pull Request；只是上傳分支。'],
+[3,'Fetch 取得遠端資訊','更新本機的 origin/* 遠端追蹤標籤。','pushed','fetched','本機只知道上次已同步的遠端狀態。','Fetch 更新遠端追蹤參照，但不自動修改目前分支。',['可先在 GitHub 網頁對 main 做一次簡單修改並提交（僅為展示差異）。','回本機右鍵 → TortoiseGit → 獲取（Fetch），選 origin。','在顯示日誌查看 origin/main 的位置。'],'理解遠端追蹤標籤反映最近一次 Fetch 的遠端狀態。','遠端追蹤分支不是即時 GitHub 資料；Fetch 之後才能更新。'],
+[3,'Pull 同步到目前分支','取得 GitHub 新 Commit，整合到本機 main。','fetched','pulled','origin/main 若有新 Commit，可能比本機 main 更新。','Pull 成功後，本機 main 包含最新遠端變更。',['先確認目前分支為 main，工作區沒有待處理變更。','右鍵 → TortoiseGit → 拉取（Pull），Remote 選 origin。','確認成功並查看檔案與版本圖。'],'本機 main 與 origin/main 同步（在沒有其他新提交時）。','若兩邊有分歧，Pull 可能會 Merge、Rebase 或要求先處理衝突。'],
+[4,'Clone 六人共用 Repository','從頭取得正式練習用的團隊專案。','teamcloud','teamclone','團隊 GitHub Repo 已由帶領者準備好 main 與六個資料夾。','每個人都有相同的本機專案副本。',['打開帶領者給的 GitHub Repository 網址 → Code → HTTPS。','在檔案總管的上層資料夾右鍵 → Git 克隆（Clone）。','貼上網址、選擇本機位置、完成下載。'],'本機出現含六個專屬資料夾的完整專案。','資料夾和分支完全不同：每個分支都包含整個專案，不是只包含自己的資料夾。'],
+[4,'Push 自己的工作分支','把個人修改分享到 GitHub，但不動 main。','teamclone','teampush','已 Clone 團隊專案；準備個人任務。','GitHub 有 feature/你的代號 分支，main 仍維持原樣。',['先重用第 11～13 步：從最新 main 建立 feature/你的代號。','在自己被分配的資料夾內建立「姓名.txt」，寫入名字並 Commit。','右鍵 → 推送（Push），上傳自己的 feature 分支到 origin。'],'GitHub 上同時存在 main 與自己的 feature 分支。','請不要直接 Push 到 main；一人一個分支、只改自己的資料夾。'],
+[4,'建立 Pull Request','正式請求把個人分支合併進 main。','teampush','pr','個人分支已推送，但 main 尚未接收修改。','GitHub 多了一個指向 main 的 PR 請求，尚未合併。',['進入 GitHub 專案 → Pull requests → New pull request。','確認 base: main；compare: feature/你的代號。','寫上簡短標題與說明，按 Create pull request。'],'PR 出現在 GitHub 的待審核清單。','PR 是合併請求，不是新的 Git Commit，也不是已合併。'],
+[4,'審查並 Approve PR','由帶領者確認組員只修改自己的資料夾。','pr','approved','PR 已建立，等待審查。','Reviewer 按 Approve；main 尚未改變。',['帶領者進入該 PR 的 Files changed 頁籤。','檢查姓名、檔案位置與修改範圍。','選 Review changes → Approve → Submit review。'],'PR 已通過審查（若平台／權限允許）。','Approve 與 Merge 是兩個動作。Repo 權限或分支保護規則會影響核准資格。'],
+[4,'Merge PR，團隊收工','讓六位組員的文件正式進入 main。','approved','teammerged','PR 已核准，等待真正合併。','合併後 main 包含該 PR 的內容；重複六次即可完成。',['有合併權限的人在 GitHub PR 頁面按 Merge pull request。','確認合併；其他組員同樣完成 PR，逐一整合。','所有人切回本機 main，重用第 22 步 Pull，檢查六份姓名檔。'],'六個資料夾都有各組員提交的姓名文件。','GitHub 可選 Merge Commit、Squash、Rebase；不同選擇會讓最終版本圖不同。']
+];
+const scenes={
+install0:'Git 尚未安裝',install1:'Git for Windows 已安裝',install2:'TortoiseGit 右鍵選單已就緒',folder:'練習資料夾 / 222.txt',repo:'.git / main（尚無提交）',cloud:'GitHub 新建空 Repository',origin:'origin = GitHub URL',teamcloud:'GitHub: main + 6 個資料夾',teamclone:'Clone → 本機完整副本'
+};
+const sceneNotes={one:'初次提交',draft:'工作區有未提交變更',two:'本機 main 有兩版',diff:'比較第一版 vs 第二版',old:'舊版快照（不改目前內容）',restore:'還原舊內容但保留歷史',branch:'兩個分支在同一 Commit',checkout:'目前 HEAD → feature',feature:'feature 前進，main 不動',mainreturn:'HEAD → main',diverged:'main 與 feature 歷史分叉',merged:'分支合併回 main',pushed:'Push 後遠端 main 同步',fetched:'Fetch 更新 origin/main',pulled:'Pull 更新本機 main',teampush:'遠端多一條個人分支',pr:'PR 待審核，不是合併',approved:'Approve 後 main 仍未變',teammerged:'Merge 完成，main 接收成果'};
+function svgEscape(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function graphFor(state){
+ const n=(x,y,c='#a5b6cf',r=7)=>`<circle cx="${x}" cy="${y}" r="${r}" fill="${c}" stroke="#0f1a2c" stroke-width="2"/>`;
+ const label=(x,y,t,c='#dde9f9',anchor='start')=>`<text x="${x}" y="${y}" font-size="12" fill="${c}" text-anchor="${anchor}" font-family="system-ui,sans-serif">${svgEscape(t)}</text>`;
+ const path=(d,color='#8ea1bc',dash='')=>`<path d="${d}" stroke="${color}" stroke-width="3" fill="none" stroke-linecap="round" ${dash?`stroke-dasharray="${dash}"`:''}/>`;
+ const box=(x,y,w,h,t,sub,c='#446785')=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="12" fill="#1b3146" stroke="${c}"/><text x="${x+w/2}" y="${y+29}" text-anchor="middle" font-size="15" font-weight="700" fill="#e4f4ff">${svgEscape(t)}</text><text x="${x+w/2}" y="${y+51}" text-anchor="middle" font-size="11" fill="#b4cee6">${svgEscape(sub)}</text>`;
+ const wrap=(svg)=>`<svg viewBox="0 0 420 160" role="img" aria-label="${svgEscape(sceneNotes[state]||scenes[state]||state)}" xmlns="http://www.w3.org/2000/svg">${svg}</svg>`;
+ if(state==='install0'||state==='install1'||state==='install2'||state==='folder'||state==='repo'||state==='cloud'||state==='origin'||state==='teamcloud'||state==='teamclone'){
+  let st={install0:['Windows','尚未安裝 Git'],install1:['Git for Windows','已具備 Git 指令'],install2:['TortoiseGit','檔案總管右鍵操作'],folder:['Git 練習資料夾','222.txt（尚未版控）'],repo:['.git 已初始化','main · 0 commits'],cloud:['GitHub Repository','空的遠端專案'],origin:['本機 Git → origin','已設定 URL · 尚未 Push'],teamcloud:['團隊 GitHub','main · 01～06 資料夾'],teamclone:['本機 Clone','擁有完整團隊專案']}[state];
+  let ico=state==='cloud'||state==='teamcloud'?'☁':state==='folder'||state==='teamclone'?'▣':state==='origin'?'⇄':'⌘';
+  return wrap(`<circle cx="210" cy="37" r="21" fill="#213c52" stroke="#3b6680"/>${label(210,43,ico,'#83caff','middle')}${box(92,66,236,76,st[0],st[1])}`);
+ }
+ const stages={one:1,draft:1,two:2,diff:2,old:2,restore:2,branch:2,checkout:2,feature:2,mainreturn:2,diverged:2,merged:2,pushed:2,fetched:2,pulled:2,teampush:2,pr:2,approved:2,teammerged:2};
+ let svg='';const main='#91a7c5', green='#59dda9',purple='#bca0ff',gold='#f4cd7f';
+ if(['one','draft','two','diff','old','restore'].includes(state)){
+   if(state==='one'||state==='draft'){
+    svg+=path('M64 75 H255',main)+n(84,75)+n(248,75,green)+label(248,52,'main',green,'middle')+label(84,104,'初始化','#afc5dc','middle');
+    if(state==='draft') svg+=path('M248 75 Q292 75 329 75',gold,'5 5')+`<circle cx="334" cy="75" r="8" fill="none" stroke="${gold}" stroke-width="2" stroke-dasharray="4 3"/>`+label(330,111,'未提交',gold,'middle');
+    else svg+=label(248,105,'初次 Commit',main,'middle');
+   }else{
+    svg+=path('M44 75 H338')+n(63,75)+n(190,75)+n(328,75,green)+label(328,52,'main',green,'middle')+label(63,101,'初始',main,'middle')+label(190,101,'第一版',main,'middle')+label(328,101,'第二版',main,'middle');
+    if(state==='diff')svg+=path('M190 58 Q258 9 328 58',gold,'6 4')+label(260,21,'比較差異',gold,'middle');
+    if(state==='old')svg+=`<rect x="158" y="54" width="65" height="41" rx="9" fill="none" stroke="${gold}" stroke-width="2" stroke-dasharray="4 3"/>`+label(197,130,'讀取舊版',gold,'middle');
+    if(state==='restore')svg+=path('M190 116 Q257 151 328 116',gold,'5 4')+label(260,154,'工作區恢復內容',gold,'middle');
+   }
+ } else if(['branch','checkout','feature','mainreturn','diverged','merged'].includes(state)){
+   svg+=path('M42 59 H166',main)+n(60,59)+n(116,59)+n(166,59);
+   if(state==='branch'||state==='checkout'){
+    svg+=label(183,48,'main',main)+label(183,73,'feature',green);
+    if(state==='checkout') svg+=label(270,73,'← HEAD',gold);
+   } else if(state==='feature'||state==='mainreturn'){
+    svg+=path('M166 59 H332',green)+n(255,59,green)+n(332,59,green)+label(166,31,'main',main,'middle')+label(332,31,'feature',green,'middle');
+    svg+=label(332,100,state==='feature'?'HEAD → feature':'HEAD → main',gold,'end');
+   } else {
+    svg+=path('M166 59 C202 59 198 22 241 22 H333',main)+path('M166 59 C202 59 198 112 241 112 H333',green)+n(255,22,main)+n(255,112,green);
+    if(state==='diverged')svg+=n(333,22,main)+n(333,112,green)+label(340,25,'main',main)+label(340,115,'feature',green);
+    else svg+=path('M255 112 C302 112 305 22 353 22',green)+path('M333 22 H353',main)+n(353,22,gold,9)+label(352,11,'Merge',gold,'end')+label(334,137,'feature',green,'middle');
+   }
+ } else {
+   // remote diagrams distinguish GitHub labels from local branch labels
+   if(['pushed','fetched','pulled'].includes(state)){
+    svg+=label(33,24,'本機',green)+label(255,24,'GitHub / origin',purple);
+    svg+=path('M34 75 H175',green)+path('M265 75 H390',purple)+n(50,75,green)+n(166,75,green)+n(277,75,purple)+n(380,75,purple);
+    svg+=path('M180 75 H257',state==='pushed'?green:purple,'5 5')+label(212,63,state==='pushed'?'Push →':state==='fetched'?'Fetch ←':'Pull ←',state==='pushed'?green:purple,'middle');
+    svg+=label(167,110,'main',green,'middle')+label(354,110,'origin/main',purple,'middle');
+    if(state==='fetched')svg+=n(333,45,purple,5)+path('M333 50 V67',purple,'4 4')+label(329,34,'遠端新提交',purple,'end');
+    if(state==='pulled')svg+=label(208,147,'同步完成',gold,'middle');
+   } else if(['teampush','pr','approved','teammerged'].includes(state)){
+    svg+=path('M35 60 H367',main)+n(54,60)+n(129,60)+n(341,60,main)+label(343,45,'main',main);
+    svg+=path('M129 60 C157 60 151 119 194 119 H339',green)+n(210,119,green)+n(339,119,green)+label(340,148,'feature/組員A',green,'end');
+    if(state==='teampush')svg+=`<rect x="201" y="94" width="153" height="40" rx="9" fill="none" stroke="${purple}" stroke-width="1.5"/>`+label(286,89,'GitHub 已有分支',purple,'middle');
+    if(state==='pr'||state==='approved')svg+=path('M339 111 Q402 82 341 63',purple,'5 5')+label(270,22,state==='pr'?'PR：請求合併':'✓ Approve（還沒 Merge）',purple,'middle');
+    if(state==='teammerged')svg+=path('M339 119 Q377 119 383 60',green)+n(383,60,gold,9)+label(375,22,'Merge ✓',gold,'end');
+   }
+ }
+ return wrap(svg);
+}
+let active=0;
+const checked=new Set();
+try{const stored=JSON.parse(localStorage.getItem('gitworkshop-checked-v1')||'[]');if(Array.isArray(stored))stored.forEach(n=>Number.isInteger(n)&&n>=0&&n<lessons.length&&checked.add(n));}catch(e){}
+function save(){try{localStorage.setItem('gitworkshop-checked-v1',JSON.stringify([...checked]));}catch(e){}}
+function pad(n){return String(n).padStart(2,'0');}
+function vidName(i){return `videos/${pad(i+1)}_${['install-git','install-tortoisegit','init-repo','first-commit','edit-file','second-commit','show-log','compare-revisions','open-old-file','restore-file','create-branch','switch-branch','feature-commit','switch-main','main-commit','merge-branch','revision-graph','create-github-repo','set-origin','push-main','fetch','pull','clone-team','push-feature','create-pr','approve-pr','merge-pr'][i]}.mp4`;}
+function renderNav(){
+ document.querySelector('#sidebarNav').innerHTML=chapterTitles.map((name,ch)=>`<div class="group-name">${pad(ch+1)} / ${name}</div>${lessons.map((l,i)=>l[0]!==ch?'':`<button type="button" class="nav ${i===active?'active':''}" data-go="${i}"><span class="num">${pad(i+1)}</span><span>${svgEscape(l[1])}</span>${checked.has(i)?'<span class="tick">✓</span>':''}</button>`).join('')}`).join('');
+ const sel=document.querySelector('#mobileSelect');sel.innerHTML=lessons.map((l,i)=>`<option value="${i}">${pad(i+1)} · ${svgEscape(l[1])}</option>`).join('');sel.value=String(active);
+ document.querySelector('#sideProgress').style.width=(checked.size/lessons.length*100)+'%';document.querySelector('#sideStat').textContent=`已完成 ${checked.size} / ${lessons.length} 步`;
+}
+function render(){
+ const l=lessons[active];const [ch,title,goal,before,after,beforeNote,afterNote,steps,expected,tip]=l;
+ const pathname=vidName(active);
+ document.querySelector('#lesson').innerHTML=`<div class="lesson-head"><div><div class="phase">CHAPTER ${pad(ch+1)}　/　${svgEscape(chapterTitles[ch])}</div><h2 class="lesson-title">${pad(active+1)}. ${svgEscape(title)}</h2><p class="lesson-goal">${svgEscape(goal)}</p></div><div class="counter">步驟 <b>${active+1}</b> / ${lessons.length}</div></div>
+ <div class="two"><article class="panel graph-panel"><div class="graph-label"><i class="swatch"></i>操作前</div><div class="graph-art">${graphFor(before)}</div><div class="graph-caption">${svgEscape(beforeNote)}</div></article><article class="panel graph-panel after"><div class="graph-label"><i class="swatch"></i>操作後 · 預期結果</div><div class="graph-art">${graphFor(after)}</div><div class="graph-caption">${svgEscape(afterNote)}</div></article></div>
+ <div class="lesson-main"><article class="panel padded"><div class="overline">ACTION / 實際操作順序</div><h3>這支影片示範的動作</h3><ol class="steps">${steps.map(s=>`<li>${svgEscape(s)}</li>`).join('')}</ol><div class="outcome"><span>✓</span><div><strong>完成判定</strong><br>${svgEscape(expected)}</div></div><div class="tip"><strong>注意：</strong>${svgEscape(tip)}</div></article>
+ <aside class="panel padded video-section"><div class="label-row"><div class="overline" style="margin:0">VIDEO / 操作微影片</div><span class="chip">預留位置</span></div><div class="video-placeholder" id="videoEmpty"><div class="play">▶</div><strong>這裡放操作示範影片</strong><span class="video-hint">錄好後放到對應檔名，重新打開 HTML 即可</span></div><video class="video-player" id="videoPlayer" controls preload="metadata" playsinline></video><div><div class="videoname">${svgEscape(pathname)}</div><p class="tiny">影片不需要旁白講解原理；從滑鼠移到目標、完成操作，錄完整組動作即可。影片檔需放在 HTML 同層的 videos 資料夾。</p></div></aside></div>
+ <div class="foot"><label class="complete"><input type="checkbox" id="completed" ${checked.has(active)?'checked':''}/> 我已操作成功，完成這一步</label><div class="actions"><button type="button" class="btn" id="prev" ${active===0?'disabled':''}>← 上一步</button><button type="button" class="btn primary" id="next">${active===lessons.length-1?'回到第 1 步':'下一步 →'}</button></div></div>`;
+ let video=document.querySelector('#videoPlayer'), empty=document.querySelector('#videoEmpty');
+ // Browser video source probes will fail quietly when files are not present; preserve the placeholder.
+ video.addEventListener('loadedmetadata',()=>{empty.style.display='none';video.style.display='block'},{once:true});
+ video.addEventListener('error',()=>{video.style.display='none';empty.style.display='flex'},{once:true});
+ video.src=pathname;
+ document.querySelector('#completed').addEventListener('change',e=>{e.target.checked?checked.add(active):checked.delete(active);save();renderNav();});
+ document.querySelector('#prev').addEventListener('click',()=>navigate(active-1));
+ document.querySelector('#next').addEventListener('click',()=>navigate(active===lessons.length-1?0:active+1));
+ renderNav();
+}
+function navigate(index){if(index<0||index>=lessons.length)return;active=index;render();document.querySelector('#lesson').scrollIntoView({behavior:'instant',block:'start'});}
+document.querySelector('#sidebarNav').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)navigate(+b.dataset.go);});
+document.querySelector('#mobileSelect').addEventListener('change',e=>navigate(+e.target.value));
+render();
+</script>
+</body></html>
