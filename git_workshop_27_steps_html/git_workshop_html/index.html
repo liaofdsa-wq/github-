@@ -12,7 +12,11 @@ main{max-width:1320px;width:100%;margin:0 auto;padding:32px clamp(18px,4vw,62px)
 @media(max-width:760px){.layout{display:block}.sidebar{display:none}.nav-mobile{display:flex;width:100%;gap:9px;padding:10px 0}.nav-mobile select{flex:1;min-width:0;background:#142438;color:#fff;border:1px solid #35506d;border-radius:9px;padding:8px;font-size:12px}main{padding:18px 15px 65px}.preface{padding:17px}.hero{padding:20px}.two{grid-template-columns:1fr}.overview{grid-template-columns:1fr 1fr}.lesson-head{flex-direction:column}.graph-panel{min-height:216px}.graph-art{height:140px}.graph-caption{min-height:0}.actions{width:100%}.actions .btn{flex:1}}
 @media print{body{background:white;color:#182537}.sidebar,.actions,.nav-mobile,.foot{display:none}.layout{display:block}main{max-width:none}.panel,.hero{background:white;box-shadow:none;color:#182537}.lesson-goal,.graph-caption{color:#475569}}
 .resource-links{display:flex;gap:9px;flex-wrap:wrap;margin:0 0 15px}.resource-link{display:inline-flex;align-items:center;gap:8px;border:1px solid #41739a;background:#173653;color:#e8f5ff;padding:9px 12px;border-radius:9px;font-size:12px;font-weight:750;text-decoration:none}.resource-link:hover{background:#21496d;text-decoration:none}.resource-link svg{width:16px;height:16px;flex:0 0 auto}
-.intro-cover{margin:22px 0 0;padding:32px;border:1px solid #2d4968;border-radius:20px;background:linear-gradient(135deg,#122640,#111a2d);box-shadow:var(--shadow)}.intro-title{font-size:clamp(28px,4vw,42px);margin:0 0 22px}.intro-video-wrap{width:min(920px,100%);margin:0 auto}.intro-video-wrap .video-placeholder,.intro-video-wrap .video-player{width:100%;aspect-ratio:16/9}.intro-video-wrap .videoname{text-align:center;margin-top:10px}.intro-actions{display:flex;justify-content:flex-end;margin-top:22px}.intro-actions .btn{min-width:120px}@media(max-width:760px){.intro-cover{padding:23px}.intro-title{margin-bottom:16px}}
+.intro-cover{margin:22px 0 0;padding:clamp(22px,3vw,38px);border:1px solid #2d4968;border-radius:20px;background:linear-gradient(135deg,#122640,#111a2d);box-shadow:var(--shadow)}.intro-title{font-size:clamp(28px,4vw,42px);margin:0}.intro-lead{max-width:850px;margin:9px 0 24px;color:#b9c9dc}.tool-pair{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:20px}.tool-note{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:15px 17px;border:1px solid #31506f;border-radius:13px;background:#101c2c}.tool-note img{width:52px;height:52px;object-fit:contain}.tool-note strong{display:block;margin-bottom:2px}.tool-note p{margin:0;color:#b8c9dc;font-size:13px}.need-map{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.need-group{border-top:2px solid #4d7899;background:#101b2b;padding:14px 16px}.need-group h2{font-size:15px;margin:0 0 8px;color:#dcecff}.need-row{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:12px;padding:8px 0;border-top:1px solid #263b52;font-size:13px}.need-row:first-of-type{border-top:0}.need-row span{color:#b9c8da}.need-row b{color:#8fd8bd;font-weight:750;text-align:right}.project-route{margin-top:18px;padding:18px;border:1px solid #3d5875;border-radius:14px;background:#0e1928}.project-route h2{font-size:17px;margin:0 0 4px}.project-route p{margin:0 0 13px;color:#aebed1;font-size:13px}.route-steps{display:flex;gap:6px;align-items:stretch;overflow-x:auto;padding-bottom:4px}.route-step{min-width:118px;flex:1;padding:10px;border:1px solid #2d4864;background:#14263a;border-radius:8px;font-size:12px;color:#e2edf9}.route-step b{display:block;color:#78c7f4;font-size:11px;margin-bottom:3px}.route-arrow{align-self:center;color:#6f8ba7}.intro-actions{display:flex;justify-content:flex-end;margin-top:22px}.intro-actions .btn{min-width:120px}
+.lesson-main{grid-template-columns:minmax(300px,.84fr) minmax(420px,1.36fr);align-items:start}.steps li{padding:0 0 0 40px}.steps li:before{top:11px}.step-select{display:block;width:100%;border:0;border-bottom:1px solid #24354a;background:transparent;color:#e2eaf6;text-align:left;padding:10px 10px 10px 0;font-size:14px;line-height:1.55}.steps li:last-child .step-select{border-bottom:0}.steps li.active:before{background:#2d7898;border-color:#77c8ed;color:#fff}.steps li.active .step-select{color:#fff;background:linear-gradient(90deg,#1b3b50aa,transparent)}.step-select:focus-visible{outline:2px solid #79cfff;outline-offset:2px;border-radius:4px}.visual-stack{display:grid;gap:12px}.keyframe-panel{padding:17px}.keyframe-stage{position:relative;min-height:310px;border:1px solid #3a5572;border-radius:12px;background:#0b1421;display:grid;place-items:center;overflow:hidden}.keyframe-empty{width:100%;min-height:310px;display:grid;place-items:center;text-align:center;padding:35px;color:#b8c9dc;background:linear-gradient(135deg,#15263a 0 25%,#122235 25% 50%,#15263a 50% 75%,#122235 75%);background-size:36px 36px}.keyframe-empty strong{display:block;color:#eef6ff;font-size:17px;margin-bottom:6px}.keyframe-empty kbd{display:inline-block;margin-top:14px;padding:5px 9px;border:1px solid #547493;border-bottom-width:3px;border-radius:6px;background:#1a3047;color:#fff;font:700 12px/1.2 inherit}.keyframe-image{display:block;width:100%;max-height:470px;object-fit:contain;background:#fff}.keyframe-caption{margin:10px 2px 0;color:#b7c7da;font-size:12px}.frame-tools{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:10px}.frame-tools .tiny{line-height:1.4}.mini-actions{display:flex;gap:6px}.mini-btn{border:1px solid #3d5875;background:#162a40;color:#dceafa;border-radius:7px;padding:6px 9px;font-size:12px}.mini-btn:hover{background:#203b57}.mini-btn:disabled{opacity:.35;cursor:not-allowed}.state-panel{padding:14px 16px}.state-heading{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}.state-heading h3{margin:0}.state-mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}.state-mini{min-width:0;padding:9px 10px;border:1px solid #2f4761;border-radius:10px;background:#0f1a29}.state-mini.after{border-color:#356b65}.state-mini .graph-label{font-size:11px}.state-mini .graph-art{height:92px;margin-top:4px}.state-mini .graph-caption{font-size:11px;min-height:0;margin-top:2px}.paste-status{color:#8fd8bd}
+@media(max-width:1050px){.lesson-main{grid-template-columns:1fr}.keyframe-stage,.keyframe-empty{min-height:290px}.need-map{grid-template-columns:1fr}}
+@media(max-width:760px){.intro-cover{padding:20px}.intro-lead{font-size:14px}.tool-pair{grid-template-columns:1fr}.tool-note{grid-template-columns:42px 1fr}.tool-note img{width:42px;height:42px}.route-step{min-width:110px}.lesson-main{grid-template-columns:1fr}.keyframe-stage,.keyframe-empty{min-height:230px}.state-mini-grid{grid-template-columns:1fr}.frame-tools{align-items:flex-end}.mini-actions{flex-shrink:0}}
+.intro-actions{gap:8px;flex-wrap:wrap}
 </style>
 </head>
 <body>
@@ -25,13 +29,25 @@ main{max-width:1320px;width:100%;margin:0 auto;padding:32px clamp(18px,4vw,62px)
 <main>
  <div class="nav-mobile"><select id="mobileSelect" aria-label="選擇操作步驟"></select></div>
  <div class="topline"><div class="eyebrow">GIT 協作分享 · 操作圖解</div><div class="meta">純 HTML · 離線可開啟 · 不執行 Git 指令</div></div>
- <section class="intro-cover" id="intro" aria-labelledby="intro-title"><h1 class="intro-title" id="intro-title">00. 介紹</h1><div class="intro-video-wrap"><div class="video-placeholder" id="introVideoEmpty"><div class="play">▶</div><strong>這裡放開場影片</strong></div><video class="video-player" id="introVideoPlayer" controls preload="metadata" playsinline></video><div class="videoname">videos/00_intro.mp4</div></div><div class="intro-actions"><button type="button" class="btn primary" id="introNext">開始 →</button></div></section>
+ <section class="intro-cover" id="intro" aria-labelledby="intro-title">
+  <h1 class="intro-title" id="intro-title">00. 介紹</h1>
+  <p class="intro-lead">Git 記住每一次版本；TortoiseGit 把常用操作放進 Windows 右鍵選單；GitHub 負責分享、審查與合併。先從需求找功能，再進入對應步驟。</p>
+  <div class="tool-pair"><div class="tool-note"><img src="assets/tortoisegit.ico" alt="TortoiseGit 應用程式圖示"><div><strong>TortoiseGit</strong><p>把 Commit、分支、合併與同步變成檔案總管裡的日常操作。本分享以 Windows 為主。</p></div></div><div class="tool-note"><img src="assets/github-mark.svg" alt="GitHub 圖示"><div><strong>GitHub</strong><p>把本機版本放到線上，讓團隊開 Pull Request、互相審查，再合併回 main。</p></div></div></div>
+  <div class="need-map" aria-label="需求與功能對照地圖">
+   <section class="need-group"><h2>保存與回看</h2><div class="need-row"><span>保存目前進度</span><b>Commit</b></div><div class="need-row"><span>查看以前做過什麼</span><b>Show Log</b></div><div class="need-row"><span>比較或取回舊內容</span><b>Compare／Revert</b></div></section>
+   <section class="need-group"><h2>安全地試新做法</h2><div class="need-row"><span>不影響主線地開工</span><b>Branch</b></div><div class="need-row"><span>切換不同工作內容</span><b>Switch</b></div><div class="need-row"><span>把成果收回主線、看分支線</span><b>Merge／Revision Graph</b></div></section>
+   <section class="need-group"><h2>本機與 GitHub 同步</h2><div class="need-row"><span>取得完整專案</span><b>Clone</b></div><div class="need-row"><span>只確認遠端有沒有更新</span><b>Fetch</b></div><div class="need-row"><span>帶回更新／送出更新</span><b>Pull／Push</b></div></section>
+   <section class="need-group"><h2>團隊確認與合併</h2><div class="need-row"><span>請團隊確認修改</span><b>Pull Request</b></div><div class="need-row"><span>檢查指定的一份修改</span><b>Files changed／Approve</b></div><div class="need-row"><span>查看整體分支合併線圖</span><b>Insights → Network</b></div></section>
+  </div>
+  <section class="project-route"><h2>十週專案會重複的流程</h2><p>每一小段工作都走同一圈；每份 PR 指定一位審查者，每個人負責審一份。</p><div class="route-steps"><div class="route-step"><b>01</b>Pull 最新 main</div><span class="route-arrow">›</span><div class="route-step"><b>02</b>建立自己的 feature 分支</div><span class="route-arrow">›</span><div class="route-step"><b>03</b>完成負責內容並 Commit</div><span class="route-arrow">›</span><div class="route-step"><b>04</b>Push 並開 PR</div><span class="route-arrow">›</span><div class="route-step"><b>05</b>指定一位審查者</div><span class="route-arrow">›</span><div class="route-step"><b>06</b>Approve 後由作者 Merge</div></div></section>
+  <div class="intro-actions"><button type="button" class="btn primary" id="introNext">開始看操作 →</button></div>
+ </section>
  <section id="lesson" aria-live="polite"></section>
 </main>
 </div>
 <script>
 'use strict';
-const chapterTitles=['環境與本機版本庫','版本時光機','分支與合併','GitHub 雲端同步','PR 與互相審查'];
+const chapterTitles=['環境與本機版本庫','版本時光機','分支與合併','GitHub 雲端同步','PR 與指定審查'];
 const lessons=[
 // chapter, title, goal, before, after, beforeNote, afterNote, steps, expected, tip
 [0,'先確認電腦已有 Git','這次分享直接從小烏龜開始，Git 安裝只做快速確認。','install0','install1','開始前先看一下環境。','Git for Windows 已可用，可以接著裝 TortoiseGit。',['這裡不重講 Git 安裝，先假設大家都已經裝好。','在開始功能表搜尋 Git Bash；找得到就可以繼續。','若真的找不到，再另外補裝 Git for Windows。'],'開始功能表找得到 Git Bash。','Git 與 GitHub 是不同的東西；這裡確認的是電腦上的 Git。'],
@@ -43,7 +59,7 @@ const lessons=[
 [1,'開啟提交歷史','用小烏龜看懂一條版本時間線。','two','two','已經有兩次提交。','顯示日誌列出兩筆 Commit 與檔案修改紀錄。',['右鍵 → TortoiseGit → 顯示日誌（Show log）。','找到第一次與第二次 Commit。','確認每筆紀錄有提交訊息、日期、作者。'],'能指出「第一版」和「第二版」各是哪一個 Commit。','「顯示日誌」和「版本分支圖」都是視覺化歷史工具，呈現方式不同。'],
 [1,'比較兩個版本','知道 Git 保存的不是只有最新版。','two','diff','同一檔案已存在兩個版本。','差異視窗標示新增、移除或修改的文字。',['開啟「顯示日誌」。','選取兩個 Commit 並使用「比較版本」（Compare revisions）。','查看 123.txt 的「123」與「123123」差異。'],'能說出第二版相較第一版多了什麼。','顏色通常代表新增與刪除，不是檔案本身的格式。'],
 [1,'開啟舊版檔案','不更動現在的檔案，直接觀看第一版。','two','old','工作資料夾仍是第二版。','開啟歷史第一版的快照；現有第二版不變。',['在「顯示日誌」選擇第一版 Commit。','在下方檔案清單找到 123.txt。','右鍵開啟該版內容，或另存該版本。'],'能看到內容「123」，而目前資料夾的「123123」仍在。','若想保留原檔，優先用「開啟／另存歷史版本」，不要用 Reset。'],
-[1,'恢復歷史檔案','了解把舊內容帶回工作區，和刪除歷史不同。','two','restore','目前檔案內容是 123123。','工作區內容可恢復成 123；舊 Commit 仍存在。',['在「顯示日誌」找到第一版及 123.txt。','在下方檔案清單對 123.txt 按右鍵，選「Revert changes to this revision／還原變更至此版本」。','看完結果後可 Commit，或把這次變更取消，讓下一步從乾淨工作區開始。'],'「恢復檔案」不會刪掉第二版的 Commit。','不要用「Reset → Hard」處理單一檔案；那會影響整個工作區。'],
+[1,'復原到舊版本','把第一版內容帶回工作區，但保留後來的歷史。','two','restore','目前檔案內容是 123123。','工作區顯示第一版的 123；第二版仍留在歷史裡。',['在「顯示日誌」找到第一版 Commit，並在下方檔案清單選取 123.txt。','對 123.txt 按右鍵，選「復原到此版本／Revert to this revision」。','打開檔案可以看到復原後的「123」；原本的「123123」仍在第二版 Commit，之後還是可以切回或再次取回。'],'舊內容回到工作區，不代表第二版被刪掉。','這裡處理的是單一檔案，不要選「Reset → Hard」；Hard Reset 會影響整個工作區。'],
 [2,'建立 feature 分支','從 main 的現有提交位置開出新分支。','two','branch','目前只有 main 的歷史指標。','多一個 feature 標籤，兩分支暫時指向同個 Commit。',['確定目前工作區沒有待處理的修改。','右鍵 → TortoiseGit → 建立分支（Create Branch）。','名稱輸入 feature，起點使用目前 main；這一步先不要勾「Switch to new branch/tag」。','確認建立。'],'本機出現 feature 分支，但目前仍在 main。','建立分支不會立刻分叉；兩個標籤一開始指向同一個 Commit。'],
 [2,'切換到 feature','讓目前工作資料夾進入新分支。','branch','checkout','feature 已建立，但可能尚未切過去。','HEAD 現在位於 feature（檔案未必立刻改變）。',['右鍵 → TortoiseGit → 切換／檢出（Switch/Checkout）。','在分支清單選 feature。','確認切換完成。'],'目前分支顯示 feature。','工作區有未提交修改時，切換可能會被阻擋；先確認狀態。'],
 [2,'在 feature Commit','只讓個人分支向前發展。','checkout','feature','main 與 feature 尚在同個 Commit。','feature 多出一個 Commit，main 仍指向舊節點。',['在 feature 分支修改 123.txt，加入一行「feature 修改」。','右鍵 → Git 提交（Commit）→ feature。','填寫訊息並完成提交。'],'feature 具有 main 尚未擁有的修改。','feature 比 main 多 Commit，不代表圖上一定畫成兩條線。'],
@@ -53,13 +69,13 @@ const lessons=[
 [2,'查看合併版本圖','用完成的歷史驗證分支與合併。','merged','merged','兩條線已經在 merge commit 匯合。','版本分支圖清楚呈現共同祖先、分叉與合併。',['右鍵 → TortoiseGit → 版本分支圖（Revision Graph）。','找出 main、feature、共同祖先與 Merge 節點。','再開「顯示日誌」比對提交紀錄。'],'能指出哪裡分叉、哪裡重新合併。','若採 Fast-forward、Squash 或 Rebase，圖形不一定會長成此處的合併形狀。'],
 [3,'建立 GitHub Repository','準備遠端儲存空間，讓 Git 歷史能共享。','merged','cloud','本機已有完整 Git 歷史。','GitHub 多了一個空的遠端 Repository。',['登入 GitHub → New repository。','輸入例如 git-workshop-demo，選擇可見性。','因為本機已有歷史，先不要新增 README／.gitignore／License，建立空 Repo。'],'取得新 Repository 的 HTTPS URL。','GitHub Repository 是雲端專案；本機 Git Repository 不會因為建立網頁專案而自動連上。'],
 [3,'設定遠端 origin','讓本機知道應該推送到哪個 GitHub 專案。','cloud','origin','GitHub 有空的 Repo，但本機尚無遠端設定。','本機記住遠端網址 origin，尚未上傳 Commit。',['在本機專案右鍵 → TortoiseGit → 設定（Settings）。','Git → 遠端（Remote），新增名稱 origin。','貼上 GitHub 的 HTTPS URL，儲存後檢查無誤。'],'本機 origin 指向正確的 GitHub Repository。','若已存在 origin，先檢查 URL，不要盲目建立第二個。'],
-[3,'Push main 到 GitHub','第一次把本機主分支上傳 GitHub。','origin','pushed','origin 已設定，但 GitHub Repo 還沒有本機提交。','本機 main 的 Commit 已出現在 GitHub 的 main。',['右鍵 → TortoiseGit → 推送（Push）。','Local 選 main、Remote 選 origin、Remote branch 填 main。','勾選「Set upstream/track remote branch」，再按 OK。','若跳出登入畫面，依 Git Credential Manager 的瀏覽器流程登入。'],'GitHub Code 頁面看得到檔案與 main 分支。','GitHub 已停用 Git 密碼驗證；請用瀏覽器登入、Token 或 Credential Manager。'],
+[3,'Push main 到 GitHub','第一次把本機主分支上傳 GitHub。','origin','pushed','origin 已設定，但 GitHub Repo 還沒有本機提交。','本機 main 的 Commit 已出現在 GitHub 的 main。',['右鍵 → TortoiseGit → 推送（Push）。','本地分支選 main、遠端選 origin；遠端分支欄若空白，可直接推送同名的 main。','若畫面有「設定上游／追蹤遠端分支」就勾選；沒有這個選項也可以直接按確定。','推送完成後回 GitHub Code 頁面，確認檔案與 main 分支都已出現。'],'GitHub Code 頁面看得到檔案與 main 分支。','第一次可能會跳出 Git Credential Manager 的瀏覽器登入；完成登入後回到推送視窗即可。'],
 [3,'Fetch 取得遠端資訊','更新本機的 origin/* 遠端追蹤參照。','pushed','fetched','本機只知道上一次同步時的遠端狀態。','知道遠端更新，但工作檔案不變；目前的 main 也不會前進。',['先在 GitHub 網頁替 main 加一個小修改並 Commit，製造遠端新版本。','回本機右鍵 → TortoiseGit → 獲取（Fetch），Remote 選 origin。','打開顯示日誌，確認 origin/main 比 main 多一個 Commit。'],'看得到 origin/main 的新 Commit，但目前檔案還沒改變。','Fetch 只下載資料並更新遠端追蹤參照，不會自動合併到 main。'],
 [3,'Pull 把遠端更新帶進 main','把 origin/main 的新 Commit 整合到目前的 main。','fetched','pulled','origin/main 已更新，main 和工作區仍在舊版本。','Pull 後 main 前進，工作區也出現 GitHub 上的修改。',['先確認目前分支是 main，工作區沒有未提交變更。','右鍵 → TortoiseGit → 拉取（Pull），Remote 選 origin。','完成後看檔案內容與顯示日誌，確認 main 和 origin/main 對齊。'],'本機 main 與 origin/main 指向同一個最新 Commit。','Pull 會 Fetch 再整合；若本機和遠端各自前進，可能需要 Merge、Rebase 或處理衝突。'],
-[4,'Clone 共用 Repository','在自己的電腦取得一份完整的共用專案。','teamcloud','teamclone','GitHub Repository 已有 main 與練習資料夾。','Clone 後，本機有完整專案與歷史。',['打開共用的 GitHub Repository 網址 → Code → HTTPS，複製網址。','在檔案總管的上層資料夾空白處按右鍵 → Git 克隆（Clone）。','貼上 URL、確認本機 Directory，按 OK。'],'本機出現完整的共用專案。','資料夾不是分支；每條分支都包含整個專案。'],
+[4,'Clone 共用 Repository','在自己的電腦取得一份完整的共用專案。','teamcloud','teamclone','GitHub Repository 已有 main 與練習資料夾。','Clone 後，本機有完整專案與歷史。',['打開共用的 GitHub Repository 網址 → Code → HTTPS，複製網址。','在你想存放專案的上層位置（例如桌面或課程資料夾）空白處按右鍵 → Git 克隆（Clone）。','貼上 URL；Directory 選實際存放位置，例如「桌面\\githubgrouptest」。Clone 會建立專案資料夾，不要先準備一個同名且非空的資料夾。','按 OK，完成後打開新建立的專案資料夾。'],'本機出現完整的共用專案。','資料夾不是分支；每條分支都包含整個專案。'],
 [4,'Push 自己的工作分支','把自己的修改分享到 GitHub，但不直接更動 main。','teamclone','teampush','已 Clone 完整專案，main 是共同起點。','GitHub 多一條 feature/你的代號；main 仍維持原樣。',['想跟著練習時，可以先 Pull 最新 main，再照第 11～13 步建立並切到 feature/你的代號。','在自己的資料夾建立文字文件，以自己的姓名命名，寫入名字後 Commit。','若 Windows 隱藏副檔名，檔案畫面只會顯示姓名，不要另外再輸入 .txt。','右鍵 → 推送（Push），Remote 選 origin，並勾「Set upstream/track remote branch」。'],'GitHub 同時有 main 與自己的 feature 分支。','先在自己的分支操作，避免直接改動共用的 main。'],
-[4,'建立 Pull Request','請求把自己的分支合併進 main。','teampush','pr','自己的分支已推送，但 main 還沒收到修改。','GitHub 出現一個 feature/你的代號 → main 的 PR。',['進入 GitHub 專案 → Pull requests → New pull request。','確認 base: main；compare: feature/你的代號。','填好標題與說明，按 Create pull request。','把 PR 連結交給另一位組員，兩人交換查看。'],'PR 已建立，可以和另一位組員交換審查。','PR 是合併請求；建立 PR 不等於已經合併。'],
-[4,'和另一位組員互相審查 PR','交換 PR，練習查看另一個人的修改。','pr','approved','PR 已建立，等待另一位組員審查。','另一位組員按下 Approve；main 仍然沒有改變。',['兩人交換各自的 PR 連結。','打開對方的 PR，進入 Files changed。','檢查姓名、檔案位置與修改範圍。','選 Review changes → Approve → Submit review。'],'雙方都能看懂對方改了什麼，PR 也完成審查。','PR 作者不能核准自己的 PR；要和另一位組員互相審查。Approve 和 Merge 是兩個不同動作。'],
+[4,'建立 Pull Request','請求把自己的分支合併進 main。','teampush','pr','自己的分支已推送，但 main 還沒收到修改。','GitHub 出現一個 feature/你的代號 → main 的 PR。',['進入 GitHub 專案 → Pull requests → New pull request。','確認 base: main；compare: feature/你的代號。','填好標題與說明，按 Create pull request。','依照分配，在 Reviewers 指定一位審查者。'],'PR 已建立，而且已指定一位審查者。','PR 是合併請求；建立 PR 不等於已經合併。'],
+[4,'審查指定給自己的 PR','每個人只檢查事先分配的一份修改。','pr','approved','PR 已建立，等待指定的組員審查。','審查者按下 Approve；main 仍然沒有改變。',['打開指定給自己審查的 PR。','進入 Files changed。','檢查檔案位置、內容與修改範圍。','選 Review changes → Approve → Submit review。'],'能看懂這份 PR 改了什麼，並完成審查。','PR 作者不能核准自己的 PR；每份 PR 指定一位其他組員。Approve 和 Merge 是兩個不同動作。'],
 [4,'Merge PR，收回自己的成果','把已通過審查的姓名檔合併進 main。','approved','teammerged','PR 已核准，等待合併。','Merge 後，自己的姓名檔進入 main。',['若要完成整段流程，在自己的 PR 頁面按 Merge pull request。','選 Create a merge commit，再按 Confirm merge。','切回本機 main，照第 22 步 Pull。','確認最新版 main 看得到自己的姓名檔。'],'本機最新 main 內有自己的姓名檔。','若沒有 Merge 權限，可以停在已審查的 PR；若選單沒有 Create a merge commit，可能是 Repository 尚未開啟 Allow merge commits。'],
 [4,'在 GitHub 查看分支合併線圖','用 GitHub Network 圖查看自己的分支如何合併回 main。','teammerged','network','自己的 PR 已 Merge，但還沒從線圖確認。','Network 圖看得到 feature 分開、提交，再合併回 main。',['回到 GitHub Repository 首頁。','點上方 Insights。','在左側選 Network。','沿著線找到 feature/你的代號，確認它最後合併回 main。'],'線圖上看得到自己的分支分開與 Merge 回 main 的路徑。','若看不到 Insights → Network，可能是私人 Repository 的方案或權限限制；公開 Repository 可直接使用。']
 ];
@@ -149,49 +165,109 @@ function graphFor(state){
  return wrap(svg);
 }
 let active=-1;
+let activeStep=0;
+let renderToken=0;
+let captureUrl='';
 const checked=new Set();
 try{const stored=JSON.parse(localStorage.getItem('gitworkshop-checked-v1')||'[]');if(Array.isArray(stored))stored.forEach(n=>Number.isInteger(n)&&n>=0&&n<lessons.length&&checked.add(n));}catch(e){}
 function save(){try{localStorage.setItem('gitworkshop-checked-v1',JSON.stringify([...checked]));}catch(e){}}
 function pad(n){return String(n).padStart(2,'0');}
-function vidName(i){return `videos/${pad(i+1)}_${['check-git','install-tortoisegit','init-repo','first-commit','edit-file','second-commit','show-log','compare-revisions','open-old-file','restore-file','create-branch','switch-branch','feature-commit','switch-main','main-commit','merge-branch','revision-graph','create-github-repo','set-origin','push-main','fetch','pull','clone-team','push-feature','create-pr','approve-pr','merge-pr','github-network-graph'][i]}.mp4`;}
+function captureKey(lessonIndex,stepIndex){return `${pad(lessonIndex+1)}-${pad(stepIndex+1)}`;}
+let captureDbPromise;
+function captureDb(){
+ if(!captureDbPromise)captureDbPromise=new Promise((resolve,reject)=>{const request=indexedDB.open('git-share-captures-v1',1);request.onupgradeneeded=()=>request.result.createObjectStore('frames');request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error);});
+ return captureDbPromise;
+}
+async function getCapture(key){const db=await captureDb();return new Promise((resolve,reject)=>{const tx=db.transaction('frames','readonly');const request=tx.objectStore('frames').get(key);request.onsuccess=()=>resolve(request.result||null);request.onerror=()=>reject(request.error);});}
+async function setCapture(key,file){const db=await captureDb();return new Promise((resolve,reject)=>{const tx=db.transaction('frames','readwrite');tx.objectStore('frames').put(file,key);tx.oncomplete=()=>resolve();tx.onerror=()=>reject(tx.error);});}
+async function getAllCaptures(){
+ const db=await captureDb();return new Promise((resolve,reject)=>{const found=[];const tx=db.transaction('frames','readonly');const request=tx.objectStore('frames').openCursor();request.onsuccess=()=>{const cursor=request.result;if(cursor){found.push({key:String(cursor.key),file:cursor.value});cursor.continue();}else resolve(found.sort((a,b)=>a.key.localeCompare(b.key)));};request.onerror=()=>reject(request.error);});
+}
+const crcTable=(()=>{const table=new Uint32Array(256);for(let n=0;n<256;n++){let c=n;for(let k=0;k<8;k++)c=(c&1)?0xedb88320^(c>>>1):c>>>1;table[n]=c>>>0;}return table;})();
+function crc32(bytes){let crc=0xffffffff;for(const byte of bytes)crc=crcTable[(crc^byte)&255]^(crc>>>8);return (crc^0xffffffff)>>>0;}
+function zipClock(date){return {time:(date.getHours()<<11)|(date.getMinutes()<<5)|(date.getSeconds()>>1),date:((Math.max(1980,date.getFullYear())-1980)<<9)|((date.getMonth()+1)<<5)|date.getDate()};}
+function captureExtension(type){if(type==='image/jpeg')return 'jpg';if(type==='image/webp')return 'webp';if(type==='image/gif')return 'gif';return 'png';}
+async function makeCaptureZip(captures){
+ const encoder=new TextEncoder(),localParts=[],centralParts=[];let offset=0,centralSize=0;const clock=zipClock(new Date());
+ for(const capture of captures){
+  const data=new Uint8Array(await capture.file.arrayBuffer()),name=encoder.encode(`captures/${capture.key}.${captureExtension(capture.file.type)}`),crc=crc32(data);
+  const local=new Uint8Array(30);let view=new DataView(local.buffer);view.setUint32(0,0x04034b50,true);view.setUint16(4,20,true);view.setUint16(6,0x0800,true);view.setUint16(8,0,true);view.setUint16(10,clock.time,true);view.setUint16(12,clock.date,true);view.setUint32(14,crc,true);view.setUint32(18,data.length,true);view.setUint32(22,data.length,true);view.setUint16(26,name.length,true);view.setUint16(28,0,true);
+  localParts.push(local,name,data);
+  const central=new Uint8Array(46);view=new DataView(central.buffer);view.setUint32(0,0x02014b50,true);view.setUint16(4,20,true);view.setUint16(6,20,true);view.setUint16(8,0x0800,true);view.setUint16(10,0,true);view.setUint16(12,clock.time,true);view.setUint16(14,clock.date,true);view.setUint32(16,crc,true);view.setUint32(20,data.length,true);view.setUint32(24,data.length,true);view.setUint16(28,name.length,true);view.setUint16(30,0,true);view.setUint16(32,0,true);view.setUint16(34,0,true);view.setUint16(36,0,true);view.setUint32(38,0,true);view.setUint32(42,offset,true);centralParts.push(central,name);centralSize+=central.length+name.length;offset+=local.length+name.length+data.length;
+ }
+ const end=new Uint8Array(22),endView=new DataView(end.buffer);endView.setUint32(0,0x06054b50,true);endView.setUint16(4,0,true);endView.setUint16(6,0,true);endView.setUint16(8,captures.length,true);endView.setUint16(10,captures.length,true);endView.setUint32(12,centralSize,true);endView.setUint32(16,offset,true);endView.setUint16(20,0,true);
+ return new Blob([...localParts,...centralParts,end],{type:'application/zip'});
+}
+async function exportCaptures(button){
+ const original=button.textContent;button.disabled=true;button.textContent='正在整理貼圖…';
+ try{const captures=await getAllCaptures();if(!captures.length){button.textContent='目前沒有貼圖';setTimeout(()=>{button.textContent=original;button.disabled=false;},1800);return;}const zip=await makeCaptureZip(captures);const url=URL.createObjectURL(zip),link=document.createElement('a');link.href=url;link.download='git-workshop-captures.zip';document.body.appendChild(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),3000);button.textContent=`已下載 ${captures.length} 張`;setTimeout(()=>{button.textContent=original;button.disabled=false;},2200);}catch(e){button.textContent='匯出失敗';button.disabled=false;}
+}
+const packagedCaptureSources={
+ '01-01':'assets/git-ready-guide.svg','01-02':'assets/git-ready-guide.svg','01-03':'assets/git-ready-guide.svg',
+ '02-01':'assets/tortoisegit-download-guide.svg','02-02':'assets/tortoisegit-download-guide.svg',
+ '02-03':'assets/official-tortoisegit/SettingsMain.png','02-04':'assets/official-tortoisegit/ContextMenuDirControl.png',
+ '11-04':'assets/official-tortoisegit/Branch.png',
+ '23-01':'assets/official-github/03-copy-remote-url.png','23-02':'assets/official-tortoisegit/GitClone.png','23-03':'assets/official-tortoisegit/GitClone.png','23-04':'assets/official-tortoisegit/GitClone.png',
+ '24-01':'assets/official-tortoisegit/GitPull.png','24-02':'assets/official-tortoisegit/Commit.png','24-03':'assets/official-tortoisegit/GitPush.png','24-04':'assets/official-tortoisegit/GitPush.png',
+ '25-01':'assets/official-github/05-compare-pull-request.png','25-02':'assets/official-github/05-compare-pull-request.png','25-03':'assets/official-github/05-compare-pull-request.png','25-04':'assets/official-github/05-compare-pull-request.png',
+ '26-01':'assets/official-github/06-files-changed-tab.png','26-02':'assets/official-github/06-files-changed-tab.png','26-03':'assets/official-github/06-files-changed-tab.png','26-04':'assets/official-github/07-review-changes.png',
+ '27-01':'assets/official-github/08-merge-pull-request.png','27-02':'assets/official-github/08-merge-pull-request.png','27-03':'assets/official-tortoisegit/GitPull.png','27-04':'assets/official-github/08-merge-pull-request.png',
+ '28-01':'assets/github-network-guide.svg','28-02':'assets/github-network-guide.svg','28-03':'assets/github-network-guide.svg','28-04':'assets/github-network-guide.svg'
+};
+function packagedCaptureSource(key){
+ if(packagedCaptureSources[key])return packagedCaptureSources[key];
+ const lesson=Number(key.slice(0,2));
+ return lesson>=3&&lesson<=22?`assets/user-captures/${key}.png`:'';
+}
+function putCapture(stage,src,alt,statusText){
+ const image=document.createElement('img');image.className='keyframe-image';image.src=src;image.alt=alt;stage.replaceChildren(image);
+ const status=document.querySelector('#pasteStatus');if(status){status.textContent=statusText;status.classList.add('paste-status');}
+}
+async function showCapture(key,token,alt){
+ const stage=document.querySelector('#keyframeStage');if(!stage)return;
+ const packaged=packagedCaptureSource(key);if(packaged)putCapture(stage,packaged,alt,'圖片已包含在網頁資料夾');
+ try{
+  const file=await getCapture(key);if(token!==renderToken||!file)return;
+  if(captureUrl)URL.revokeObjectURL(captureUrl);captureUrl=URL.createObjectURL(file);putCapture(stage,captureUrl,alt,'目前顯示瀏覽器中的最新版；傳送版也已保存圖片');
+ }catch(e){}
+}
 const lessonLinks={1:[
- {label:'前往 TortoiseGit 官方下載頁',url:'https://tortoisegit.org/download/'}
-]};
+ {label:'下載 TortoiseGit 64-bit',url:'https://download.tortoisegit.org/tgit/2.19.0.0/TortoiseGit-2.19.1.0-64bit.msi'},
+ {label:'下載繁中語言包 64-bit',url:'https://download.tortoisegit.org/tgit/2.19.0.0/TortoiseGit-LanguagePack-2.19.0.0-64bit-zh_TW.msi'},
+ {label:'其他版本／ARM64',url:'https://tortoisegit.org/download/'}
+],6:[{label:'官方：顯示日誌',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-showlog.html'}],7:[{label:'官方：比較版本',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-diff.html'}],9:[{label:'官方：復原舊版本',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-revert.html'}],16:[{label:'官方：版本分支圖',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-revgraph.html'}],20:[{label:'官方：Fetch 與 Pull',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-pull.html'}],21:[{label:'官方：Fetch 與 Pull',url:'https://tortoisegit.org/docs/tortoisegit/tgit-dug-pull.html'}],24:[{label:'GitHub 官方：建立 PR',url:'https://docs.github.com/en/pull-requests/how-tos/create-pull-requests/creating-a-pull-request'}],25:[{label:'GitHub 官方：審查 PR',url:'https://docs.github.com/en/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request'}],27:[{label:'GitHub 官方：Network 圖',url:'https://docs.github.com/en/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories'}]};
 function renderNav(){
  document.querySelector('#sidebarNav').innerHTML=`<button type="button" class="nav ${active===-1?'active':''}" data-go="-1"><span class="num">00</span><span>介紹</span></button>`+chapterTitles.map((name,ch)=>`<div class="group-name">${pad(ch+1)} / ${name}</div>${lessons.map((l,i)=>l[0]!==ch?'':`<button type="button" class="nav ${i===active?'active':''}" data-go="${i}"><span class="num">${pad(i+1)}</span><span>${svgEscape(l[1])}</span>${checked.has(i)?'<span class="tick">✓</span>':''}</button>`).join('')}`).join('');
  const sel=document.querySelector('#mobileSelect');sel.innerHTML=`<option value="-1">00 · 介紹</option>`+lessons.map((l,i)=>`<option value="${i}">${pad(i+1)} · ${svgEscape(l[1])}</option>`).join('');sel.value=String(active);
  document.querySelector('#sideProgress').style.width=(checked.size/lessons.length*100)+'%';document.querySelector('#sideStat').textContent=`已看過 ${checked.size} / ${lessons.length} 步`;
 }
 function render(){
+ const token=++renderToken;
  const intro=document.querySelector('#intro');
  if(active===-1){intro.classList.remove('hidden');document.querySelector('#lesson').innerHTML='';renderNav();return;}
  intro.classList.add('hidden');
  const l=lessons[active];const [ch,title,goal,before,after,beforeNote,afterNote,steps,expected,tip]=l;
- const pathname=vidName(active);
+ activeStep=Math.max(0,Math.min(activeStep,steps.length-1));
+ const frameKey=captureKey(active,activeStep);
  const resources=lessonLinks[active]||[];
  document.querySelector('#lesson').innerHTML=`<div class="lesson-head"><div><div class="phase">PART ${pad(ch+1)}　/　${svgEscape(chapterTitles[ch])}</div><h2 class="lesson-title">${pad(active+1)}. ${svgEscape(title)}</h2><p class="lesson-goal">${svgEscape(goal)}</p></div><div class="counter">步驟 <b>${active+1}</b> / ${lessons.length}</div></div>
- <div class="two"><article class="panel graph-panel"><div class="graph-label"><i class="swatch"></i>操作前</div><div class="graph-art">${graphFor(before)}</div><div class="graph-caption">${svgEscape(beforeNote)}</div></article><article class="panel graph-panel after"><div class="graph-label"><i class="swatch"></i>操作後 · 預期結果</div><div class="graph-art">${graphFor(after)}</div><div class="graph-caption">${svgEscape(afterNote)}</div></article></div>
- <div class="lesson-main"><article class="panel padded"><div class="overline">ACTION / 操作會長這樣</div><h3>操作順序</h3>${resources.length?`<div class="resource-links">${resources.map(r=>`<a class="resource-link" href="${r.url}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>${svgEscape(r.label)}</a>`).join('')}</div>`:''}<ol class="steps">${steps.map(s=>`<li>${svgEscape(s)}</li>`).join('')}</ol><div class="outcome"><span>✓</span><div><strong>看到這個結果</strong><br>${svgEscape(expected)}</div></div><div class="tip"><strong>注意：</strong>${svgEscape(tip)}</div></article>
- <aside class="panel padded video-section"><div class="label-row"><div class="overline" style="margin:0">VIDEO / 操作短片</div><span class="chip">預留位置</span></div><div class="video-placeholder" id="videoEmpty"><div class="play">▶</div><strong>這裡放操作短片</strong><span class="video-hint">檔名對上後，重新打開 HTML 即可</span></div><video class="video-player" id="videoPlayer" controls preload="metadata" playsinline></video><div class="videoname">${svgEscape(pathname)}</div></aside></div>
+ <div class="lesson-main"><article class="panel padded"><div class="overline">操作順序</div><h3>點一個小步，右邊會切到它的關鍵畫面</h3>${resources.length?`<div class="resource-links">${resources.map(r=>`<a class="resource-link" href="${r.url}" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0 4-4m-4 4-4-4M5 18h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>${svgEscape(r.label)}</a>`).join('')}</div>`:''}<ol class="steps">${steps.map((s,i)=>`<li class="${i===activeStep?'active':''}"><button type="button" class="step-select" data-step="${i}" ${i===activeStep?'aria-current="step"':''}>${svgEscape(s)}</button></li>`).join('')}</ol><div class="outcome"><span>✓</span><div><strong>看到這個結果</strong><br>${svgEscape(expected)}</div></div><div class="tip"><strong>注意：</strong>${svgEscape(tip)}</div></article>
+ <aside class="visual-stack"><section class="panel keyframe-panel"><div class="label-row"><div><div class="overline" style="margin:0">關鍵畫面</div><h3>小步 ${activeStep+1} / ${steps.length}</h3></div><span class="chip">${frameKey}</span></div><div class="keyframe-stage" id="keyframeStage"><div class="keyframe-empty"><div><strong>這一步以文字操作為主</strong><span>依左側順序完成即可</span></div></div></div><p class="keyframe-caption">${svgEscape(steps[activeStep])}</p><div class="frame-tools"><span class="tiny" id="pasteStatus">操作示意圖</span><div class="mini-actions"><button type="button" class="mini-btn" id="prevFrame" ${activeStep===0?'disabled':''}>← 上一小步</button><button type="button" class="mini-btn" id="nextFrame" ${activeStep===steps.length-1?'disabled':''}>下一小步 →</button></div></div></section>
+ <section class="panel state-panel"><div class="state-heading"><h3>這一步的 Git 狀態</h3><span class="tiny">說明線圖</span></div><div class="state-mini-grid"><article class="state-mini"><div class="graph-label"><i class="swatch"></i>操作前</div><div class="graph-art">${graphFor(before)}</div><div class="graph-caption">${svgEscape(beforeNote)}</div></article><article class="state-mini after"><div class="graph-label"><i class="swatch"></i>操作後</div><div class="graph-art">${graphFor(after)}</div><div class="graph-caption">${svgEscape(afterNote)}</div></article></div></section></aside></div>
  <div class="foot"><label class="complete"><input type="checkbox" id="completed" ${checked.has(active)?'checked':''}/> 這一步我看過了</label><div class="actions"><button type="button" class="btn" id="prev">${active===0?'← 介紹':'← 上一步'}</button><button type="button" class="btn primary" id="next">${active===lessons.length-1?'回到介紹':'下一步 →'}</button></div></div>`;
- let video=document.querySelector('#videoPlayer'), empty=document.querySelector('#videoEmpty');
- // Browser video source probes will fail quietly when files are not present; preserve the placeholder.
- video.addEventListener('loadedmetadata',()=>{empty.style.display='none';video.style.display='block'},{once:true});
- video.addEventListener('error',()=>{video.style.display='none';empty.style.display='flex'},{once:true});
- video.src=pathname;
+ showCapture(frameKey,token,steps[activeStep]);
+ document.querySelectorAll('[data-step]').forEach(button=>button.addEventListener('click',()=>{activeStep=+button.dataset.step;render();}));
+ document.querySelector('#prevFrame').addEventListener('click',()=>{if(activeStep>0){activeStep--;render();}});
+ document.querySelector('#nextFrame').addEventListener('click',()=>{if(activeStep<steps.length-1){activeStep++;render();}});
  document.querySelector('#completed').addEventListener('change',e=>{e.target.checked?checked.add(active):checked.delete(active);save();renderNav();});
  document.querySelector('#prev').addEventListener('click',()=>navigate(active-1));
  document.querySelector('#next').addEventListener('click',()=>navigate(active===lessons.length-1?-1:active+1));
  renderNav();
 }
-function navigate(index){if(index<-1||index>=lessons.length)return;active=index;render();document.querySelector(index===-1?'#intro':'#lesson').scrollIntoView({behavior:'instant',block:'start'});}
+function navigate(index){if(index<-1||index>=lessons.length)return;active=index;activeStep=0;render();document.querySelector(index===-1?'#intro':'#lesson').scrollIntoView({behavior:'instant',block:'start'});}
 document.querySelector('#sidebarNav').addEventListener('click',e=>{const b=e.target.closest('[data-go]');if(b)navigate(+b.dataset.go);});
 document.querySelector('#mobileSelect').addEventListener('change',e=>navigate(+e.target.value));
 document.querySelector('#introNext').addEventListener('click',()=>navigate(0));
-const introVideo=document.querySelector('#introVideoPlayer'),introEmpty=document.querySelector('#introVideoEmpty');
-introVideo.addEventListener('loadedmetadata',()=>{introEmpty.style.display='none';introVideo.style.display='block'},{once:true});
-introVideo.addEventListener('error',()=>{introVideo.style.display='none';introEmpty.style.display='flex'},{once:true});
-introVideo.src='videos/00_intro.mp4';
 render();
 </script>
 </body></html>
